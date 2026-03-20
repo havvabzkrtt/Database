@@ -242,12 +242,17 @@ FOREIGN KEY (categoryId) REFERENCES categories(id);
 ```python
 "SELECT p.name,c.name from products p inner join categories c on p.categoryid=c.id"
 ```
-- **INNER JOIN** ifadesi kullanarak iki tablo arasında bir ilişki kurar ve her iki tablodan seçilen sütunları birleştirerek sonuç döndürür. 
-
+- **INNER JOIN** ifadesi kullanarak iki tablo arasında bir ilişki kurar ve her iki tablodan seçilen sütunları birleştirerek sonuç döndürür.
+  Örnek mantık:
+    A tablosu: öğrenciler
+    B tablosu: notlar
+    Sadece notu olan öğrenciler gelir
 
 
 - **LEFT JOIN** ve **RIGHT JOIN**, birleştirme işlemlerinde eksik eşleşmelerin nasıl ele alındığını belirler.
-
+  Örnek:
+    Tüm öğrenciler gelir
+    Notu olmayanların notu NULL olur
 ```python
 "SELECT products.name AS product_name, categories.name AS category_name FROM products LEFT JOIN categories ON products.categoryid = categories.id"
 ```
